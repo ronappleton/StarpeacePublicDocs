@@ -8,3 +8,4 @@ The aim of this repo is to produce notes for the waiting Starpeace community to 
 Below is an index of relevant pages to read, although more pages will exist than appear in this index, the ones that do appear should be the documents you read primarily.
 
 [Concepts](https://github.com/ronappleton/StarpeacePublicDocs/blob/master/concepts.md)
+[Build Progress](https://github.com/ronappleton/StarpeacePublicDocs/blob/master/build_progress.md)
