@@ -47,7 +47,28 @@ We incorporated this by calculating the business pay level against the average w
 
 # Engine 4
 
-WE are happy with progress so far but we believe that pay disparity should also have an effect on the population generated each round, as if average wages are higher in one town, then that town should pull in more population than a town with a lower average wage level.
+We are happy with progress so far but we believe that pay disparity should also have an effect on the population generated each round, as if average wages are higher in one town, then that town should pull in more population than a town with a lower average wage level, and on the same note, the lower the wages of a town the less likely hood there is of attracting population to the town.
+
+Now as the code base develops, more and more factors will be introduced which will influence population growth, so this a again in interim measure to facilitate growth but in a reasonable way at this moment in time.
+
+This is a super hard issue to resolve, we have established that there should be no fixed lower or upper amount of population influx, that sounds like a simple idea to field, but for us it was not, generating something from nothing really is hard. At the same time we need to consider that people may not always want to come to the town, there could be no jobs, all the jobs could be low paid, and crime could be high, we need to bare this in mind as it may also mean that we need to remove population also, and should that happen, we need to decide where that loss of population should come from.
+
+At this point we have decided that we will do the population movement once a day, or twenty four ticks, as we wish to make ticks equivilent to an hour, then we have a simple principle to have faster and slower worlds by halving or doubling the ticks respectively.
+
+We have established that the influx should be based on historical figures to prevent fast fluctuations based on some abusive behaviour that may corrupt the simulation.
+
+Ok, so sounding radical we have come to the conclusion that the initial minimum growth rate should be 0% at engine start and the maximum influx at engine start should be 100%, these rates are based on if nothing is built, if theres no reason to come to a town, then people wont. We will be adding a chaos fluctuator at a later date to make this seem a little more organic, take settlers for example, sometimes people setup there lives in remote places because they can, and we should incorporate that.
+
+To develop the growth rate we have decided that each desirability factor that causes town desire should have a fixed percentage and that negative effects should also have a percentage that is fixed, what we shall do is calculate the total percentage for desire and then subtract the negative percent to get the total percentage of needed population we will influx during the population tick.
+
+So initially we will give businesses requiring workers equal to a maximum input percentage of 20%, we know this will drop as we add desirabilities but for now 20% will do just fine to introduce the principle.
+
+We will need to some calculations and at this point realise that the amount of calculation we need to do is rising so we are going to introduce a class for doing out calculations for us.
+
+Ok so changes for this engine complete, because of the extra thought put into the calculation it was success first time round.
+There was a small issue in that I put an empty check instead of a not empty check, but the result was exactly as hoped.
+
+We moved to introducing population at every 24 ticks only which extended the time it took the buisnesses to fill to around 700 ticks,next we tried setting farm 2's wages to 3 per tick for low_class workers compared to farm 1's 1 wages per tick, and the result was it took around twice as many ticks to completely fill both buildings, which we expected as the desirability would have reduced nicely, with Farm 2 filling up by tick 440 and Farm 1 fill eventually by round 1390 something, this is a great result, if nothing else i
 
 # Engine 5
 ## Residential Desirability
