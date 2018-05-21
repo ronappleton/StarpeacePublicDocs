@@ -24,6 +24,8 @@ Branding is a feature that we believe was missed in the original game, although 
 
 Branding will also gain more traction in its effect to affect desirability, while the percentage of affect it has on desirability will be narrowed down as testing takes place, we are looking at it making up, up to 20% of the desirability of a commercial business, ofcourse branding will need to be maintained to get maximum use out of it and the power of branding will be reflected in the cost of it. Again this makes for a more realistic approach to desirability.
 
+Unlike the original game though, the production of the media for advertising the branding will be vastly more expensive, and require more raw products for production.
+
 # Ecologically Friendly
 
 This iteration of the game may include desirability factors based on how ecologically sound a business is, at the moment as an idea we are looking at it being an effect that will affect the desirability to all classes but will effect middle class and low class the same but it will be more important to the high class population.
