@@ -48,3 +48,14 @@ We incorporated this by calculating the business pay level against the average w
 # Engine 4
 
 WE are happy with progress so far but we believe that pay disparity should also have an effect on the population generated each round, as if average wages are higher in one town, then that town should pull in more population than a town with a lower average wage level.
+
+# Engine 5
+## Residential Desirability
+The intention of this engine will be to introduce the concept of residencies and introduce the concept to the generation AND distribution of the population influx.
+
+For example a business with closer residentials should attract staff easier than a business with residentials further away. We should also incorporate the fact that if the residential building is full then that desirability should be removed, and also for example a business needs 30 workers but residentials only have space for 20 of them.
+
+# Engine 6
+## Supply and demand
+This engine will be a real step forward as we will introduce the concept of the trade centre, raw products, and finished goods ready for retail, it will also introduce the commercial business to retail that product, this will be a simple introduction of the concept though as we want to start factoring in the population buying products in the next engine.
+
