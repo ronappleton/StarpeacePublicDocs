@@ -68,7 +68,7 @@ We will need to some calculations and at this point realise that the amount of c
 Ok so changes for this engine complete, because of the extra thought put into the calculation it was success first time round.
 There was a small issue in that I put an empty check instead of a not empty check, but the result was exactly as hoped.
 
-We moved to introducing population at every 24 ticks only which extended the time it took the buisnesses to fill to around 700 ticks,next we tried setting farm 2's wages to 3 per tick for low_class workers compared to farm 1's 1 wages per tick, and the result was it took around twice as many ticks to completely fill both buildings, which we expected as the desirability would have reduced nicely, with Farm 2 filling up by tick 440 and Farm 1 fill eventually by round 1390 something, this is a great result, if nothing else i
+We moved to introducing population at every 24 ticks only which extended the time it took the buisnesses to fill to around 700 ticks,next we tried setting farm 2's wages to 3 per tick for low_class workers compared to farm 1's 1 wages per tick, and the result was it took around twice as many ticks to completely fill both buildings, which we expected as the desirability would have reduced nicely, with Farm 2 filling up by tick 440 and Farm 1 fill eventually by round 1390 something, this is a great result, and has given us a good kick in realising that we actually can move forward with the project, the understanding is coming on well, we have some nice hurdles to jump but im sure we will get there.
 
 # Engine 5
 ## Residential Desirability
