@@ -28,5 +28,5 @@ Unlike the original game though, the production of the media for advertising the
 
 # Ecologically Friendly
 
-This iteration of the game may include desirability factors based on how ecologically sound a business is, at the moment as an idea we are looking at it being an effect that will affect the desirability to all classes but will effect middle class and low class the same but it will be more important to the high class population.
+This iteration of the game may include desirability factors based on how ecologically sound a business is, at the moment as an idea we are looking at it being an effect that will affect the desirability to all classes and will effect middle class and low class the same but it will be more important to the high class population.
 
