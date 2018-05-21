@@ -31,7 +31,7 @@ We did this by incorporating variables to hold data on the class needs of each b
 
 We continued to share the poulation out evenly between thoughs that needed it but this time incorporating the count of businesses needing the class of worker, we also added code for handling the division being odd and for reducing the amount of businesses needing a class of worker, when the share had been made. That way we could still share the whole population influx between the businesses needing the workers.
 
-The results were identicle to the last engine but with more logic in place. We also introduced data tables for displaying what was happening each round as the enabled us to see the effects of tweaking also.
+The results were identicle to the last engine but with more logic in place. We also introduced data tables for displaying what was happening each round as they enabled us to see the effects of tweaking also.
 
 # Engine 3
 
