@@ -76,6 +76,8 @@ The intention of this engine will be to introduce the concept of residencies and
 
 For example a business with closer residentials should attract staff easier than a business with residentials further away. We should also incorporate the fact that if the residential building is full then that desirability should be removed, and also for example a business needs 30 workers but residentials only have space for 20 of them.
 
+Ok, so this time round things were a lot simpler than before, taking a total of 30 minutes to write the residential class
+
 # Engine 6
 ## Supply and demand
 This engine will be a real step forward as we will introduce the concept of the trade centre, raw products, and finished goods ready for retail, it will also introduce the commercial business to retail that product, this will be a simple introduction of the concept though as we want to start factoring in the population buying products in the next engine.
