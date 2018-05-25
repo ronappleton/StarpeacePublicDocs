@@ -30,3 +30,6 @@ Unlike the original game though, the production of the media for advertising the
 
 This iteration of the game may include desirability factors based on how ecologically sound a business is, at the moment as an idea we are looking at it being an effect that will affect the desirability to all classes and will affect middle class and low class the same but it will be more important to the high class population.
 
+# Masters Series
+
+I would like to add in a masters level to the game, this level would have a more delicate simulation setup and would introduce concepts like commodity markets with all the risks associated with it, good returns on investment and the possibility of buyouts take overs and mergers, maybe even a couple extra costs added like electricity and water?
