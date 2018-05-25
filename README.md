@@ -1,4 +1,4 @@
-<img src="https://github.com/ronappleton/starpeace-base/blob/master/starpeace-logo.png" width="180px" height="150px">
+<img src="https://github.com/ronappleton/starpeace-public-documents/blob/master/starpeace-logo.png" width="180px" height="150px">
 
 
 # Starpeace Public Documents
