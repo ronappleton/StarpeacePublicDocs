@@ -70,13 +70,32 @@ There was a small issue in that I put an empty check instead of a not empty chec
 
 We moved to introducing population at every 24 ticks only which extended the time it took the buisnesses to fill to around 700 ticks,next we tried setting farm 2's wages to 3 per tick for low_class workers compared to farm 1's 1 wages per tick, and the result was it took around twice as many ticks to completely fill both buildings, which we expected as the desirability would have reduced nicely, with Farm 2 filling up by tick 440 and Farm 1 fill eventually by round 1390 something, this is a great result, and has given us a good kick in realising that we actually can move forward with the project, the understanding is coming on well, we have some nice hurdles to jump but im sure we will get there.
 
-# Engine 5
+# Engine 5.1
 ## Residential Desirability
 The intention of this engine will be to introduce the concept of residencies and introduce the concept to the generation AND distribution of the population influx.
 
 For example a business with closer residentials should attract staff easier than a business with residentials further away. We should also incorporate the fact that if the residential building is full then that desirability should be removed, and also for example a business needs 30 workers but residentials only have space for 20 of them.
 
-Ok, so this time round things were a lot simpler than before, taking a total of 30 minutes to write the residential class
+Been a little while since an update due to holidays and illness, but back on it now.
+
+Its taken a little time but the engine has now been re-written into a Symfony command package curtesy of laravels
+illuminate/console which is a nice layer on top of Smyfony components. The reason for this is because we were starting to need a sensible structure to work in as things get more complicated.
+
+SQLite has now been written in to keep track of the simulation behaviour as the engine develops, we will of course want to be charting data as time goes on for analysis of what does and does not work, we are using the brilliant laravel/database package to assist in this as most of the underlying structure will be laravel and lumen based, it makes sense to start how we mean to go on database wise and that is using the remarkable Eloquent from laravel for our database ORM, and as it supports both SQLite and MySql natively it makes it a good choice to work with as the cross over between the models for simulation testing and for the actual game will not differ massively.
+
+So at this point this evening, whilst the concept of residentials has been introduces, at the moment it is using two desirabilities, rent desirability and occupancy desirability, this will do to get things in tune for the second before adding in other desirabilities so we can see how things progress.
+
+So at this point in time we now have Businesses and Residentials and Population, we have four desires:
+  - Wage desire
+  - Unemployment desire
+  - Rent desire
+  - Occupancy desire
+  
+ It's felt that this is enough to make sure the base of desirability is being calculated sensibly, although not perfectly.
+ 
+ It should also allow us to begin to look deeper and how population would move about.
+
+
 
 # Engine 6
 ## Supply and demand
