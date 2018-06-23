@@ -89,6 +89,40 @@ Five minutes is frequent enough for the players to consider the data up to date 
     - I am sure that could help at some point but hohum.
     
     
-    
+  Ooh, so interesting discovery, if i am looking at the usual game view window envelope on a 1440 by 900 resolution
+  the tile ratio appears 2:1 width:height, another insteresting fact from 2.5D.
+  The width appears on this resolution to be 30 tiles, so the height is then 15 tiles
+  This gives us 450 tiles on screen in the envelope which for some reason surprises me.
+  At max zoom out (5 steps) it looks to give us 70:35 which in turn gives us 2450 blocks in view
+  Zoomed in is 30:15  (450 blocks)
+  Zoom Out 1 is 40:20 (800 blocks)
+  Zoom Out 2 is 50:25 (1250 blocks)
+  Zoom Out 3 is 60:30 (1800 blocks)
+  Zoom Out 4 is 70:35 (2450 blocks)
+  
+  I wonder if we can pickup something from the block amounts maths wise.
+  
+  2450 - 1800 = 650
+  1800 - 1250 = 550
+  1250 - 800  = 450
+  800  - 450  = 350
+  
+  Interesting indeed, the block count increases by a factor of 100 blocks at each zoom level.
+  
+  There is deep and meaningful maths in there, but in my very small layman head, i am guessing that if we load map data in 100 block chunks regardless of the resolution, screen size, then we will probably be doing ok.
+  
+  At full zoom out, we are then calling 70% of 2450 which is 18 (100x100) blocks width and 8 blocks (100x100) to fill the screen (30% height) which by my maths should be 144% of the area we need to cover which I think is perfect for overspill also.
+  
+However, the consideration here is that the blocks within the viewing window can be off by 5 blocks based on the 100x100 blocks.
+
+So if we increase by one block each way so 19x9 blocks i think we should be covering 177% of the window which should cover it nicely.
+
+Now based on that generosity of data, we should not have to worry too much about movement, as we should have a movement envelope of (needed 1715 x 735) 3035 X 1300 meaning that local movement should be round about covered and if we load an area of map into memory in the client, it will stay there. Its just working out based on movement speed and hitting the bounds of the data we have, at what point the client should request updated data, but ill leave that to the client to worry about.
+
+
+  
+  
+  
+  
     
 
