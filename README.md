@@ -13,3 +13,5 @@ Below is an index of relevant pages to read, although more pages will exist than
 [Concepts](https://github.com/ronappleton/StarpeacePublicDocs/blob/master/concepts.md)
 
 [Build Progress](https://github.com/ronappleton/StarpeacePublicDocs/blob/master/build_progress.md)
+
+[Data Model](https://github.com/ronappleton/StarpeacePublicDocs/blob/master/data-model.md)
