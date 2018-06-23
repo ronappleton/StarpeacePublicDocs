@@ -84,6 +84,7 @@ Five minutes is frequent enough for the players to consider the data up to date 
     - 894/4 = 223
     - 223*223 = 49950
     - 49950 / 4 = 12500 buildings max
+    - note: i clearly did a little rounding, i dont think im wrong to do that.
     - so the estimation is 1 quarter of the map tile size for the tile map 4 times larger, ooh a correlation
     - I am sure that could help at some point but hohum.
     
