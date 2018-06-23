@@ -78,13 +78,16 @@ Five minutes is frequent enough for the players to consider the data up to date 
     For each building built, we should reserve say a length and width of road, so for a 3x3 building the road would be 1x6 for example. So lets just say that the av building size will be 4x4 instead and that includes road estimations.
     So within the 3.2 Million spaces (1789*1789 by my shocking maths) we could fit 1789/4 * 1789/4 buildings or 200,032 buildings, however each of the buildings will only consume 1 not 4 blocks, so we can divide that again by 4 to get a realistic building count for a fully populated map which is 50,000 buildings, so in theory we should store only 50,000 buildings on a fully populated map, this is good we have an ideal to work with now.
     out of pure interest and being real bad at maths, i am going to see the difference on a 1000x1000 map.
-    1000*1000 gives us 1 Million tiles.
-    20% water = 200,000
-    sqrt(800000) = 894X894 blocks
-    894/4 = 223
-    223*223 = 49950
-    49950 / 4 = 12500 buildings max
-    so the estimation is 1 quarter of the map tile size for the tile map 4 times larger, ooh a correlation
+    - 1000*1000 gives us 1 Million tiles.
+    - 20% water = 200,000
+    - sqrt(800000) = 894X894 blocks
+    - 894/4 = 223
+    - 223*223 = 49950
+    - 49950 / 4 = 12500 buildings max
+    - so the estimation is 1 quarter of the map tile size for the tile map 4 times larger, ooh a correlation
+    - I am sure that could help at some point but hohum.
+    
+    
     
     
 
