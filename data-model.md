@@ -119,8 +119,9 @@ So if we increase by one block each way so 19x9 blocks i think we should be cove
 
 Now based on that generosity of data, we should not have to worry too much about movement, as we should have a movement envelope of (needed 1715 x 735) 3035 X 1300 meaning that local movement should be round about covered and if we load an area of map into memory in the client, it will stay there. Its just working out based on movement speed and hitting the bounds of the data we have, at what point the client should request updated data, but ill leave that to the client to worry about.
 
+My consideration is then how quick i can build the data and pass to client and cache at that point.
 
-  
+Obviously, each envelope we build will be passed of to cache for other users, and the fact buildings may change within it will cause the update frequency of the cache, but 
   
   
   
