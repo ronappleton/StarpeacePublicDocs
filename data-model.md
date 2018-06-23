@@ -121,7 +121,8 @@ Now based on that generosity of data, we should not have to worry too much about
 
 My consideration is then how quick i can build the data and pass to client and cache at that point.
 
-Obviously, each envelope we build will be passed of to cache for other users, and the fact buildings may change within it will cause the update frequency of the cache, but 
+Obviously, each envelope we build will be passed off to cache for other users, and the fact buildings may change within it will cause the update frequency of the cache, but then, what we should be doing is removing any real time data from the transit and only passing reference data, that way we can use it to reference changes, so when a users view point changes if a building within that view changes image to construction 2, then we can pass that in the response for that area.
+
   
   
   
