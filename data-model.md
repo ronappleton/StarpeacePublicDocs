@@ -41,14 +41,14 @@ The galaxy data is nothing more than a list of planets in each area, it looks in
 
 This gives us the following considerations.
 
-  3.1. The area names and ids will barely if ever change.
-  3.2. The worlds and names and ids will barely if ever change (only on add and remove world (eclipse))
-  3.3. The world data such as population count, investor count and online count will change often. 
+  -3.1. The area names and ids will barely if ever change.
+  -3.2. The worlds and names and ids will barely if ever change (only on add and remove world (eclipse))
+  -3.3. The world data such as population count, investor count and online count will change often. 
 
 This is real interesting as we dont want to make db calls that are not needed, So in reality and all likely hood what we will do is this:
 
-  3.3.1. We will cache the area data for 90 days, and invalidate and update on a world change within the area.
-  3.3.2. We will cache the world data for 5 minutes and then update the cache.
+  -3.3.1. We will cache the area data for 90 days, and invalidate and update on a world change within the area.
+  -3.3.2. We will cache the world data for 5 minutes and then update the cache.
 
   Five minutes is frequent enough for the players to consider the data up to date and by still caching the data, we are only     hitting the database once every five minutes for an important area of the game.
 
