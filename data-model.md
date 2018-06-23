@@ -50,6 +50,41 @@ This is real interesting as we dont want to make db calls that are not needed, S
       3.3.1. We will cache the area data for 90 days, and invalidate and update on a world change within the area.
       3.3.2. We will cache the world data for 5 minutes and then update the cache.
 
-  Five minutes is frequent enough for the players to consider the data up to date and by still caching the data, we are only     hitting the database once every five minutes for an important area of the game.
+Five minutes is frequent enough for the players to consider the data up to date and by still caching the data, we are only     hitting the database once every five minutes for an important area of the game, which is cool as there are far more important areas that need the db access.
 
+4. Now when the player chooses the world, they have already done so based on the data already presented or because they know what they want, Again no need to find any data for them at this point.
+
+- 5 Client checks user can access the world
+- 6 Client presents option to enter world as Tycoon (Investor) or as Visitor (Spectator)
+- 7 If Tycoon is already setup on the world the client takes them back to last exit position
+
+    5.1 This is security/authorization based and as such will always be done in real time with no cache.
+    6.1 There may be conditions etc that can prevent a player entering a world, like subscription, prestige and that sort of thing, because of this we do need to check against data held in the database, however, with the exception of the subscription date, that data will not change from world start, and if it does we can use invalidate and recache, we can set cache date as 90 days here very safely.
+    7.1 Its easy to look at this and think that there is no need to cache this data, but hey, we have a cache and can use it, also its validity is not of real importance as we can just pop them into wherever if need be. And following the principle of reading from the db as little as possible, its no issue to constantly update this in the cache as the client window on the world changes. In fact this actually tells us we do not need to store this in the database at all, its pointless, we will just use the cache and make it valid for 7 days and theres no cach entry, we will drop them into the map in the same way we would a visitor, this will also reduce writes on the database, which is an overhead we will be happy to lose for simply recording a players last location. In honesty we could even pass off this responsibility to the client itself to store in local storage which would save even the need for hitting the cache for the location, the client can pass the locatio the same as it would if moving around the world.
+    
+- 8 Entering the world
+
+    This is an important area, we pass the location we want to see, this is the central point of the view, then we hit the cache for the view window which must also be based on the zoom level we observe the world from, the rotation direction of the view must also be passed as if viewing in an envelope then the response will be different based on a 90 degree rotation, as such we only need to cache two rotations, because it is down to the client to know where to draw from the top, the bottom etcetera to display the map tiles correctly.
+    Whats in the data to be passed, well, we need the buildings unique id within the game world, the buildings type id so the correct image can be displayed, the buildings condition for changing aspects of the tile, we need the location of one of the corners and we need the size accross x and y plains, this is for each building, thats enough information to display correctly and to fetch further information relating to the buildings correctly.
+    This is a difficult ideal to plan as we want to minimise hits to the database as hitting the database for map information would be far too much weight, baring in mind we want to run as many world instances from the database as possible in order to minimise running costs.
+    So this will probably require some clever programming from the client and server side.
+    The best way I can summise this could work is by storing the map in strips or predefined blocks the idea being that in the closest zoom would would only need to load say nine predefined blocks (a block being defined as a single screen size area on the viewing game resolution.
+    
+    You see as a side note, the largest map we serve at the moment is 2000x2000 this gives us 4 Million map tiles or potentially 4 Million buildings, the difference is that we will only store information for map tiles that have a building on it because theres no need to store it otherwise as it will be rendered as land anyway.
+    This takes into account that all buildings have a starting x and y, we do not need to store any data regarding the tiles the building covers as that it assesses when trying to build a building, if the new building would occupy a space already taken by the building at x,y that is x long and y wide then deny the building.
+    So we need some theory to whittle down to a realistic amount of buildings on a built up map.
+    So, say 20% of the map is water (thats 800,000 blocks we wont be storing)
+    Building sizes range from 1x1 to 7x7 but the average i would say lies around 3x3
+    For each building built, we should reserve say a length and width of road, so for a 3x3 building the road would be 1x6 for example. So lets just say that the av building size will be 4x4 instead and that includes road estimations.
+    So within the 3.2 Million spaces (1789*1789 by my shocking maths) we could fit 1789/4 * 1789/4 buildings or 200,032 buildings, however each of the buildings will only consume 1 not 4 blocks, so we can divide that again by 4 to get a realistic building count for a fully populated map which is 50,000 buildings, so in theory we should store only 50,000 buildings on a fully populated map, this is good we have an ideal to work with now.
+    out of pure interest and being real bad at maths, i am going to see the difference on a 1000x1000 map.
+    1000*1000 gives us 1 Million tiles.
+    20% water = 200,000
+    sqrt(800000) = 894X894 blocks
+    894/4 = 223
+    223*223 = 49950
+    49950 / 4 = 12500 buildings max
+    so the estimation is 1 quarter of the map tile size for the tile map 4 times larger, ooh a correlation
+    
+    
 
