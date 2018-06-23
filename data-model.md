@@ -37,3 +37,19 @@ So lets break it down into points.
 1. Not really worth assessing here, the person hitting the client could be Kermit the frog for all we know.
 2. This is done every time a user comes back to the game, they login, there credentials are checked, as is the validity of there access token, if needed the token is refreshed, then the client is able to access the game API on the users behalf (as long as token checks out and has not been revoked).
 3. Chooses Galaxy, now this is where our first consideration occurs in this scenario.
+The galaxy data is nothing more than a list of planets in each area, it looks in effect as though, area wont change often, and the worlds in those areas wont change often, but the data relating to the worlds in the area will change often.
+
+This gives us the following considerations.
+
+  1. The area names and ids will barely if ever change.
+  2. The worlds and names and ids will barely if ever change (only on add and remove world (eclipse))
+  3. The world data such as population count, investor count and online count will change often. 
+
+This is real interesting as we dont want to make db calls that are not needed, So in reality and all likely hood what we will do is this:
+
+  1. We will cache the area data for 90 days, and invalidate and update on a world change within the area.
+  2. We will cache the world data for 5 minutes and then update the cache.
+
+  Five minutes is frequent enough for the players to consider the data up to date and by still caching the data, we are only     hitting the database once every five minutes for an important area of the game.
+
+
